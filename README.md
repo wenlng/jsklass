@@ -21,7 +21,7 @@ npm install jsklass-import --save
 ```
 or
 ```shell
-bower install liangwengao/jsklass --save
+bower install liangwengao/jsklass-import --save
 ```
 
 ### node require module
