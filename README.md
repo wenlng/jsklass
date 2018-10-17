@@ -21,7 +21,7 @@ npm install jsklass-import --save
 ```
 or
 ```shell
-bower install liangwengao/jsklass-import --save
+npm install liangwengao/jsklass-import --save
 ```
 
 ### node require module
@@ -96,6 +96,7 @@ var 类名 = DefClass("类名", function (sl, co, st, su, po) {
   });
 ```
 or
+
 ```html
 <script type="text/javascript" src="/bower_components/jsklass/lib/jsklass.js"></script>
 
@@ -123,7 +124,7 @@ const Jsklass = require('jsklass-require');
 * @description Demo类
 * @class Demo
 */
-const Person = Jsklass.DefClass("Person", function (sl, co, st, su, po) {
+const Demo = Jsklass.DefClass("Demo", function (sl, co, st, su, po) {
   //todo ...
 });
 ```
@@ -136,11 +137,12 @@ import * as JsKlass from 'jsklass-import';
 * @description Demo类
 * @class Demo
 */
-const Person = JsKlass.DefClass("Person", function (sl, co, st, su, po) {
+const Demo = JsKlass.DefClass("Demo", function (sl, co, st, su, po) {
   //todo ...
 });
 ```
 or
+
 ```js
 import {
     DefClass,
@@ -152,7 +154,7 @@ import {
 * @description Demo类
 * @class Demo
 */
-const Person = DefClass("Person", function (sl, co, st, su, po) {
+const Demo = DefClass("Demo", function (sl, co, st, su, po) {
   //todo ...
 });
 ```
