@@ -36,10 +36,10 @@ npm install liangwengao/jsklass-require --save
 
 ## JsKlass API: 
 ```text
-DefClass: Define class
-DefInterface: Define interface
-InterfaceType: Define interface to implement type
-Global: Save module, "Browser version" has api 
+JsKlass.DefClass: Define class
+JsKlass.DefInterface: Define interface
+JsKlass.InterfaceType: Define interface to implement type
+JsKlass.Global: Save module, "Browser version" has api 
 ```
 
 ### Syntax
@@ -91,7 +91,7 @@ var 类名 = DefClass("类名", function (sl, co, st, su, po) {
    * @description Demo类
    * @class Demo
    */
-  var Demo = Jsklass.DefClass("Demo", function (sl, co, st, su, po) {
+  var Demo = JsKlass.DefClass("Demo", function (sl, co, st, su, po) {
     //todo ...
   });
 ```
@@ -118,13 +118,13 @@ or
 
 ### Creating a Class in "require version"
 ```js
-const Jsklass = require('jsklass-require');
+const JsKlass = require('jsklass-require');
 
 /**
 * @description Demo类
 * @class Demo
 */
-const Demo = Jsklass.DefClass("Demo", function (sl, co, st, su, po) {
+const Demo = JsKlass.DefClass("Demo", function (sl, co, st, su, po) {
   //todo ...
 });
 ```
@@ -692,10 +692,10 @@ demo-a.js 模块
   });
 
 })(
-  window.JsKlass.DefClass,
-  window.JsKlass.DefInterface,
-  window.JsKlass.InterfaceType,
-  window.JsKlass.Global
+  JsKlass.DefClass,
+  JsKlass.DefInterface,
+  JsKlass.InterfaceType,
+  JsKlass.Global
 );
 ```
 
@@ -711,10 +711,10 @@ demo-b.js 模块
 
   Global.demo = new DemoB;
 })(
-  window.JsKlass.DefClass,
-  window.JsKlass.DefInterface,
-  window.JsKlass.InterfaceType,
-  window.JsKlass.Global
+  JsKlass.DefClass,
+  JsKlass.DefInterface,
+  JsKlass.InterfaceType,
+  JsKlass.Global
 );
 ```
 
@@ -724,10 +724,10 @@ demo.js
   console.log(new Global.DemoA);
   console.log(Global.demo);
 })(
-  window.JsKlass.DefClass,
-  window.JsKlass.DefInterface,
-  window.JsKlass.InterfaceType,
-  window.JsKlass.Global
+  JsKlass.DefClass,
+  JsKlass.DefInterface,
+  JsKlass.InterfaceType,
+  JsKlass.Global
 );
 ```
 
