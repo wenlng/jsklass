@@ -14,12 +14,11 @@
     "url": "git+https://github.com/liangwengao/jsklass.git"
   },
   "keywords": [
-    "es6",
+    "es5",
     "javascript",
     "oop",
     "jsklass",
-    "jsklass-import",
-    "jsklass-es",
+    "jsklass-es5",
     "js-oop",
     "klass"
   ],
