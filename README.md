@@ -15,7 +15,7 @@
 bower install liangwengao/jsklass --save
 ```
 
-### node import module
+### es import module
 ```shell
 npm install jsklass-import --save
 ```
@@ -209,7 +209,7 @@ demo.hide();
 ```
 
 ### Extends
->一个类在定义时可以去继承另一个类的属性或方法，但不支持多重继承，一个类只允许继承一个基类，也允许无限级继承。
+>一个类在定义时可以去继承另一个类的属性或方法，但不支持多重继承，一个类只允许继承一个基类。
 ```js
 /**
  * @description DemoA类
@@ -676,6 +676,61 @@ console.log(Demo);
   |-super_class_name    //保存的父类名称对象
   |-toString            //把该类转成code
 */
+```
+
+
+### 实例剖析
+>当一个类被实例化对象后，对象自身也会固定内置有一些属性与方法，以下说明：
+```js
+(function (DefClass, DefInterface, InterfaceType, Global) {
+  /**
+   * @description Demo类
+   * @class Demo
+   */
+  var Demo = DefClass("Demo", function (sl, co, st, su, po) {
+    co.VERSION = "1.0.1";
+
+    /**
+     * @description show方法
+     * @function Demo#show
+     */
+    sl.show = function () {
+      console.log("Demo.show()");
+    };
+
+    /**
+     * @description hide方法
+     * @function Demo#hide
+     */
+    po.hide = function () {
+      console.log("Demo.hide()");
+    };
+  });
+
+  console.log(new Demo);
+
+  /*
+  |-{}                        //实例化对象
+    |-show: function()        //sl指向中的show方法
+    |-...
+  ​  |->prototype<             //类中prototype原型对象
+      |-hide: function()      //po指向的属性与方法
+      |-...
+      |->prototype<
+        |-_vd_:               //JsKlass内部使用
+        |-lifetime_uid: "..." //运行环境里动态并且唯一的UID标识
+        |-class_name          //类名
+        |-instanceOfClass     //检测该实例是否属于某个类的
+        |-instanceOfInterface //检测某个接口是否属于该实例实现的
+        |-interface_name      //保存的接口名称对象
+        |-super_class_name    //保存的父类名称对象
+        |-toString            //把该类转成code
+  */
+
+})(window.JsKlass.DefClass,
+  window.JsKlass.DefInterface,
+  window.JsKlass.InterfaceType,
+  window.JsKlass.Global);
 ```
 
 ### Browser version Global
