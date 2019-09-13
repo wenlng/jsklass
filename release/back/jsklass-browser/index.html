@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+<body>
+
+<script type="text/javascript" src="./lib/jsklass.js"></script>
+
+<script type="text/javascript">
+  var TestClassSelf = function () {
+    var DemoClass = JK.DefClass("DemoClass", function (sl, co, st, su, po) {
+//不会生成getter与setter
+      sl.name = "awen";
+      sl.show = function () {
+        console.log(">>> DemoClass.show()");
+      };
+    });
+
+    var dc = new DemoClass;
+    console.log(DemoClass);
+    console.log(dc.name);
+  };
+
+  var TestClassConst = function () {
+    var DemoClass = JK.DefClass("DemoClass", function (sl, co, st, su, po) {
+      co.VERSION = "v1.0.0";
+      co.NAME = "awen";
+      co.MODEL = "EN";
+    });
+
+    var dc = new DemoClass;
+    console.log(DemoClass);
+    console.log(DemoClass.VERSION);
+    console.log(dc.getConst());
+    console.log(DemoClass.getConst());
+  };
+
+  var TestClassStatic = function () {
+    var DemoClass = JK.DefClass("DemoClass", function (sl, co, st, su, po) {
+      st.instance = function () {
+
+      };
+
+      st.username = "awen";
+    });
+
+    var dc = new DemoClass;
+    console.log(DemoClass);
+    console.log(DemoClass.username);
+    console.log(dc.getStatic());
+    console.log(DemoClass.getStatic());
+  };
+
+  var TestClassPrototype = function () {
+    var DemoClass = JK.DefClass("DemoClass", function (sl, co, st, su, po) {
+      po.username = "awen";
+      po.show = function () {
+        po.username = ":....";
+      };
+    });
+
+    var dc = new DemoClass;
+    console.log(DemoClass);
+    console.log(dc);
+    dc.show();
+    console.log((dc.username = function () {
+
+    }));
+  };
+
+  var TestClassSuper = function () {
+    var DemoAClass = JK.DefClass("DemoAClass", function (sl, co, st, su, po) {
+      sl._construct = function () {
+        console.log(">>>> DemoAClass._construct()");
+        su._construct();
+      };
+
+      sl.username = "123";
+      po.cname = "-1-1-1";
+      po.show = function () {
+        console.log("DemoAClass.show() >>> "+sl.username);
+//po.cname = ":::::>>>>>>";
+      };
+    });
+
+    var DemoBClass = JK.DefClass("DemoBClass", function (sl, co, st, su, po) {
+      sl._construct = function () {
+        console.log("DemoBClass._construct() >>>> ");
+        su._construct();
+      };
+
+      sl.username = "456";
+
+      sl.show = function () {
+        console.log(">>> DemoBClass.show()");
+      };
+
+      sl.super = function () {
+        console.log(su);
+        console.log(su.username);
+        su.show();
+        po.cname = ":::>>>>>>::";
+        console.log(su.cname);
+      };
+    }, DemoAClass);
+
+    var dc = new DemoBClass;
+    console.log(DemoBClass);
+    console.log(dc);
+    console.log(dc.username);
+    dc.super();
+    console.log(dc.cname);
+    dc.show();
+
+    $.each(dc, function (k, v) {
+      console.log(k);
+    });
+  };
+
+  var TestClassFinal = function () {
+    var DemoAClass = JK.DefClass("DemoAClass", function (sl, co, st, su, po) {
+      sl.$display = function () {
+        return ">>>: display()"
+      };
+
+      po.$hide = function () {
+        return ">>>: hide()"
+      };
+    });
+
+    var DemoBClass = JK.DefClass("DemoBClass", function (sl, co, st, su, po) {
+      sl.super = function () {
+        console.log(su);
+        console.log(su.display());
+        console.log(su.hide());
+      };
+    }, DemoAClass);
+
+    var dc = new DemoBClass;
+    console.log(DemoBClass);
+    dc.super();
+    dc.display = function () {
+      return "abc";
+    };
+    dc.hide = function () {
+      return "abc";
+    };
+  };
+
+  var TestClassSetterGetter = function () {
+    var DemoAClass = JK.DefClass("DemoAClass", function (sl, co, st, su, po) {
+      sl.show = function () {
+
+      };
+
+      po.username = null;
+      po._getUsername = function (value) {
+        if(!value){
+          value = po.username = "awen*****";
+          console.log(">>> first.");
+        }
+
+        return value;
+      };
+    });
+
+    console.log(DemoAClass);
+    var dc = new DemoAClass;
+    console.log(dc.username);
+    console.log(dc.username);
+
+  };
+
+  var TestClassProtocol = function () {
+
+//"@optional"、"@required"
+    var DemoProtocol = JK.DefProtocol("DemoProtocol", {
+      "self":{
+        "name": JK.ProtocolType.string("@optional"),
+        "username": JK.ProtocolType.string(),
+        "$demoPo": JK.ProtocolType.function()
+      }
+    });
+
+    var DemoAClass = JK.DefClass("DemoAClass", function (sl, co, st, su, po) {
+      sl.name = "";
+      sl.username = "";
+
+      sl.$demoPo = function () {
+
+      };
+    }, null, DemoProtocol);
+
+    console.log(DemoAClass);
+    var da = new DemoAClass;
+    da.username = "awen";
+    console.log(da.username);
+    da.username = null;
+    da.username = undefined;
+    da.username = 111;
+    console.log(da.username);
+  };
+
+  var TestClassCoder = function () {
+    var ST = (new Date()).getTime();
+
+    var DemoAClass = JK.DefClass("DemoAClass", function (sl, co, st, su, po) {
+      var name = null,
+        age = null;
+
+      sl.$test = function () {
+
+      };
+
+      sl._construct = function () {
+        console.log("---DemoAClass._construct----");
+        name = "liang";
+        age = 18;
+      };
+
+      sl._decoder = function (decoder) {
+        console.log("------DemoAClass-----");
+        name = decoder.name;
+        age = decoder.age;
+        su._decoder(decoder.super);
+      };
+
+      sl._encoder = function () {
+        return {"name": name, "age": age, "super": su._encoder()};
+      };
+
+      sl.info = function () {
+        console.log(">>>name="+name+"; age="+age);
+      }
+    });
+
+    var DemoBClass = JK.DefClass("DemoBClass", function (sl, co, st, su, po) {
+      sl.name = "awen";
+      sl._decoder = function (decoder) {
+        console.log("------DemoBClass-----");
+        sl.name = decoder.name;
+        su._decoder(decoder.super);
+      };
+
+      sl._encoder = function () {
+        return {"name": sl.name, "super": su._encoder()};
+      };
+
+      sl._construct = function () {
+        console.log("---DemoBClass._construct----");
+        su._construct();
+      };
+
+      su.show = function () {
+
+      };
+      sl.showSuper = function () {
+//su._construct();
+//su._decoder();
+        console.log(su);
+      }
+    }, DemoAClass);
+    var EN = (new Date()).getTime();
+    console.log("-log> use time:" + (EN - ST) + "ms.");
+
+    console.log(DemoBClass);
+    var dc = new DemoBClass;
+    console.log(dc);
+    console.log(JSON.stringify(dc));
+
+    console.log("++++++++++++++++++++++++");
+    var str = '{"name":"liangwengao","super":{"name":"awen****","age":20,"super":{}}}';
+    var dcn = DemoBClass.renew(str);
+    console.log(dcn);
+    dcn.info();
+  };
+
+  var TestClassInstance = function () {
+    var DemoProtocol = JK.DefProtocol("DemoProtocol", {
+      "self":{
+        "name": JK.ProtocolType.string("@optional"),
+        "username": JK.ProtocolType.string(),
+        "$demoPo": JK.ProtocolType.function()
+      }
+    });
+
+    var DemoAClass = JK.DefClass("DemoAClass", function (sl, co, st, su, po) {
+      sl.name = "";
+      sl.username = "";
+
+      sl.$demoPo = function () {
+
+      };
+    }, null, DemoProtocol);
+
+    var DemoBClass = JK.DefClass("DemoBClass", function (sl, co, st, su, po) {
+      sl.name = "DemoBClass";
+    });
+
+    console.log("-------");
+    var demoA = new DemoAClass;
+    console.log(DemoAClass.instanceOf(new DemoAClass));
+    console.log(DemoAClass.instanceOfProtocol(DemoProtocol));
+    console.log(demoA);
+  };
+
+
+
+
+  TestClassSetterGetter();
+
+
+</script>
+
+</body>
+</html>

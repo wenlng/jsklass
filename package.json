@@ -1,31 +1,27 @@
 {
-  "name": "jsklass",
-  "version": "1.0.0",
-  "description": "jsklass, framework for ES6 oop converted to Es5 in javascript, inspired from https://github.com/liangwengao/jsklass",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "name": "rollup",
+  "version": "2.0.0",
+  "description": "This is a jsklass project.",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-browser": "rollup -c --config build/browser.rollup.config.js",
+    "build-require": "rollup -c --config build/require.rollup.config.js",
+    "build-import": "rollup -c --config build/import.rollup.config.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/liangwengao/jsklass.git"
-  },
-  "keywords": [
-    "es5",
-    "javascript",
-    "oop",
-    "jsklass",
-    "jsklass-es5",
-    "js-oop",
-    "klass"
-  ],
   "author": "awen",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/liangwengao/jsklass/issues"
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "rollup": "^0.59.4",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-uglify": "^6.0.0",
+    "rollup-plugin-uglify-es": "0.0.1",
+    "rollup-watch": "^4.3.1"
   },
-  "homepage": "https://github.com/liangwengao/jsklass#readme"
+  "dependencies": {}
 }

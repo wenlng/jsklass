@@ -1,0 +1,21 @@
+{
+  "name": "jsklass",
+  "repo": "liangwengao/jsklass-browser",
+  "homepage": "https://github.com/liangwengao/jsklass-browser",
+  "version": "2.0.0",
+  "main": "jsklass",
+  "keywords": [
+    "javascript",
+    "oop",
+    "jsklass",
+    "js-oop",
+    "klass"
+  ],
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "description": "jsklass, framework for oop in javascript, inspired from https://github.com/liangwengao/jsklass-browser",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liangwengao/jsklass-browser.git"
+  }
+}

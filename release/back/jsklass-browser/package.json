@@ -1,0 +1,31 @@
+{
+  "name": "jsklass",
+  "version": "2.0.0",
+  "description": "jsklass, framework for ES6 oop converted to Es5 in javascript, inspired from https://github.com/liangwengao/jsklass",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liangwengao/jsklass.git"
+  },
+  "keywords": [
+    "es5",
+    "javascript",
+    "oop",
+    "jsklass",
+    "jsklass-es5",
+    "js-oop",
+    "klass"
+  ],
+  "author": "awen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liangwengao/jsklass/issues"
+  },
+  "homepage": "https://github.com/liangwengao/jsklass-browser#readme"
+}
