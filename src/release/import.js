@@ -6,5 +6,5 @@
  @Email: 871024608@qq.com
  */
 
-export {DefClass, DefProtocol, ProtocolType} from '../klass/index';
+export {DefClass, DefProtocol, ProtocolType} from "../klass/index";
 

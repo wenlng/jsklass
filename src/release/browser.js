@@ -11,9 +11,10 @@ import {
   Utils,
   Objects,
 } from "../utils/index";
-import * as Console from '../console/index';
+import * as Console from "../console/index";
 
 if(Objects.checkDefineProperty()){
+
   Object.defineProperty(window, "JsKlass", {
     value: Utils.freeze({
       DefClass : Utils.freeze(DefClass),
