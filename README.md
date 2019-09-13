@@ -6,7 +6,7 @@
 ## 使用前言
 >JsKlass不依懒任何第三方库，是一个独立基于Javascript的库，兼容IE8+以上的所有主流浏览器；在使用它前仅仅只需要有Javascript基础并且对OOP有所了解
 
-##### Browser版本: https://github.com/liangwengao/jsklass
+##### Browser版本: https://github.com/liangwengao/jsklass-browser
 ##### Import版本: https://github.com/liangwengao/jsklass-import
 ##### Require版本: https://github.com/liangwengao/jsklass-require
 
@@ -114,7 +114,7 @@ const 类名 = DefClass('类名', function (sl) {
 >在浏览器版本中使用 'JsKlass' 或 'JK' 两者是等价的 
 
 ```html
-<script type='text/javascript' src='/bower_components/jsklass-browser/lib/jsklass.js'></script>
+<script type='text/javascript' src='/bower_components/jsklass/lib/jsklass.js'></script>
 <script type='text/javascript'>
   
   /**
@@ -130,7 +130,7 @@ const Demo = JK.DefClass('Demo', function (sl) {
 或使用自动执行匿名函数包装简化
 
 ```html
-<script type='text/javascript' src='/bower_components/jsklass-browser/lib/jsklass.js'></script>
+<script type='text/javascript' src='/bower_components/jsklass/lib/jsklass.js'></script>
 <script type='text/javascript'>
   (function(DefClass, DefProtocol, ProtocolType, Global){
     
