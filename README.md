@@ -1,5 +1,5 @@
 ## JsKlass简介
->除了主流的OOP开发例如 Typescript、EcScript6+ 等JsKlass只不过是基于纯Javascript实现的OOP代码结构的包装库；具有类、继承、协议、类常量、类静态、final类型修饰、property特性、内置安全校验等功能特性
+>除了主流的OOP开发例如 Typescript、EcScript6+ 等JsKlass只不过是基于纯Javascript实现的OOP代码结构的类包装库；具有类、继承、协议、类常量、类静态、final类型修饰、property特性、内置安全校验等功能特性
 
 ##### website: www.jsklass.com
 
