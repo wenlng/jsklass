@@ -1,5 +1,5 @@
 ## JsKlass简介
->JsKlass是基于Javascript实现的OOP代码结构的JS库；具有类、继承、协议、类常量、类静态、final类型修饰、property特性、内置安全校验等功能特征
+>除了主流的OOP开发例如 Typescript、EcScript6+ 等JsKlass只不过是基于纯Javascript实现的OOP代码结构的包装库；具有类、继承、协议、类常量、类静态、final类型修饰、property特性、内置安全校验等功能特性
 
 ##### website: www.jsklass.com
 
@@ -16,7 +16,7 @@
 bower install liangwengao/jsklass-browser --save
 ```
 
-### Import模块
+### Es6模块
 ```shell
 npm install liangwengao/jsklass-import --save dev
 ```
@@ -25,7 +25,7 @@ npm install liangwengao/jsklass-import --save dev
 npm install jsklass-import --save dev
 ```
 
-### Require模块
+### Node模块
 ```shell
 npm install liangwengao/jsklass-require --save dev
 ```
@@ -35,21 +35,33 @@ npm install jsklass-require --save dev
 ```
 
 ## JsKlass特性: 
-```text
-支持无入侵式定义类
-支持类继承/多继承
-支持类构造
-支持类实例化多个独立的类对象
-支持类对象encoder/decoder
-支持类、类对象、协议的安全校验
-支持属性setter/getter
-支持属性final类型修饰
-支持协议的遵循约束/多重实现/多重继承
-支持类常量定义
-支持类静态数据共享
-支持类原型与其他Function类型进行绑定
-兼容浏览器环境(major)，兼容node环境
-```
+
+> 支持无入侵式定义类
+<br/>
+> 支持类继承/多继承
+<br/>
+> 支持类构造
+<br/>
+> 支持类实例化多个独立的类对象
+<br/>
+> 支持类对象序列化encoder/decoder
+<br/>
+> 支持类、类对象、协议的安全校验
+<br/>
+> 支持属性setter/getter
+<br/>
+> 支持属性final类型修饰
+<br/>
+> 支持协议的遵循约束/多重实现/多重继承
+<br/>
+> 支持类常量定义
+<br/>
+> 支持类静态数据共享
+<br/>
+> 支持类原型与其他Function类型进行绑定
+<br/>
+> 兼容浏览器环境(major)，兼容node环境
+
 
 
 ## JsKlass 全局API: 
@@ -1075,7 +1087,7 @@ demo.js
 
 
 ### 二十七、JsKlass关键词
->JsKlass自身保留一些关键词，而在声名属性或方法时不可以使用关键词，具体如下：
+>JsKlass保留的关键词，而在声名属性或方法时不可以使用关键词，具体如下：
 
 CLASS(const/static)常量与静态关键词：
 ```text
@@ -1132,9 +1144,6 @@ CLASS(self、prototype)关键词：
 'valueOf',
 '__proto__',
 ```
-
-
-###官方文档: www.jsklass.com/document
 
 ## LICENSE
     MIT

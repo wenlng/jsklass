@@ -3,7 +3,7 @@
  @Description: JSON处理
  @Site: www.microappos.com
  @Author: Wengao Liang
- @Email: 871024608@qq.com
+ @Email: wengaolng@gmail.com
  */
 
 import * as String from "./string";

@@ -4,7 +4,7 @@
  @Site: www.jsklass.com
  @Site: www.jsklass.com
  @Author: Wengao Liang
- @Email: 871024608@qq.com
+ @Email: wengaolng@gmail.com
  */
 
 import {Class} from "./class";

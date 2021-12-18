@@ -3,7 +3,7 @@
  @Description: 对象处理
  @Site: www.microappos.com
  @Author: Wengao Liang
- @Email: 871024608@qq.com
+ @Email: wengaolng@gmail.com
  */
 import * as Utils from "./utils";
 
